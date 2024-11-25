@@ -1,0 +1,78 @@
+ ##  COMPARISON OPERATOR
+
+ # PROJECT 4
+
+
+ If temperature is greater than 30
+   it's a hot day
+ otherwise if it's less than 10
+ it's a cold day
+ otherwise
+ it's a neither hot nor cold
+
+Important things:
+Temperature>30 [greater than 30]
+temperature<30 [less than 30]
+temperature >= 30[greater than equal to 30]
+temperature <=30[less than equal to 30]
+temperature == 30 [equal to 30]
+temperature !=30 [not equal to 30]
+
+
+# PROJECT 5
+Important things:
+len(variable) = TO count  character
+
+
+# PROJECT 6
+changes given weight to pounds or kilos according the user instruction
+IMP : 1) weight = int(input("weight") [here -int- is written to convert user input string to int ]
+convert string to int
+
+# PROJECT 7
+While loop
+always care about the placement of the line[guesses_made += 1]
+
+# PROJECT 8 // CAR GAME
+
+my version but wrong.......
+user = input('write: ')
+i = 0
+while i<1:
+if user.lower() or user.upper() == "help":
+    print('start = To start the car')
+    print('stop = To stop the car ')
+    print('quite = To exit')
+elif user.lower() or user.upper() =="start":
+    print("Car started... Ready to go!")
+elif user.lower() or user.upper() =="stop":
+    print("Car stopped")
+elif user.lower() or user.upper() =="quit":
+     break
+else:
+    print("I don't understand that")
+
+## PROJECT 9 // for loops
+
+for loops is used to complete the task at some limit, like in -rang-bracket
+
+it holds value at the same variable
+
+## PROJECTS 10// NESTED LOOP
+ == Nested loop is used for making loop under another loop
+ == It's a just a using for loop inside other for loop
+
+
+## PROJECTS 11// LISTS
+We use lists to store list of items and we can modify those  item as our need
+
+## PROJECTS 12// Tuples
+We use tuples  to store list of items and we cannot modify those items
+
+## Unpacking
+We use unpacking to indicate our item of the list or tuples into different variable within one line
+
+## Dictionaries
+ We use dictionaries to indicate our specific meaning of variable or others
+
+2:29:46

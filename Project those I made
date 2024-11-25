@@ -1,0 +1,349 @@
+###PROJECT(1)
+#Bill resturant( By my self)
+
+print("BILL CALCULATOR")
+bill_amount= float(input('Bill amount: '))
+tax_rate= float(input('tax_rate: '))
+Tip_response =input("""   If you want to give tip: yes
+   If you won't to give tip: No
+   Your response: """)
+T= bill_amount+ (bill_amount*tax_rate)/100
+
+while True:
+    if Tip_response.upper or Tip_response.lower == "yes":
+        responser2 = (input("""Enter the tip by amount : $
+         or Tip percent : %
+         Your responser: """))
+        if responser2 == "$":
+            responser3 = float(input("Enter the tip amount:"))
+            Total = bill_amount + (bill_amount * tax_rate) / 100 + responser3
+            print(f"Your total payable bill is: {Total}")
+        elif responser2 == "%":
+            responser4 = float(input("Enter the tip percentage: "))
+            Total = bill_amount + (bill_amount * tax_rate)
+            total1 = Total + (Total * responser4) / 100
+            print(f"Your total payable bill is: {total1}")
+        else:
+            print("Wrong character, enter as mention")
+
+        break
+
+    print(f"Your total payable bills is:{T}")
+
+
+#Bill resturant( By CHATGPT)
+
+# BILL CALCULATOR
+print("Welcome to the Bill Calculator")
+
+# Step 1: Input the bill amount and tax rate, with type conversion to float
+bill_amount = float(input("Enter the bill amount: $"))
+tax_rate = float(input("Enter the tax rate (%): "))
+
+# Step 2: Calculate the tax amount and the initial total with tax
+tax_amount = (bill_amount * tax_rate) / 100
+total_with_tax = bill_amount + tax_amount
+
+# Step 3: Ask the user if they want to add a tip
+tip_response = input("Would you like to add a tip? (yes/no): ").strip().lower()        #  [.strip().] remove the unwanted space from unser response
+
+# Initialize the total amount to be payable
+total_bill = total_with_tax
+
+# Step 4: Check if the user wants to add a tip
+if tip_response == "yes":
+    # Ask if the user wants to enter the tip as a fixed amount or as a percentage
+    tip_type = input("Enter tip type: amount ($) or percentage (%): ").strip()
+
+    # Step 5: Handle the tip amount based on user input
+    if tip_type == "$":
+        # Input tip as a fixed amount
+        tip_amount = float(input("Enter the tip amount in dollars: $"))
+        total_bill += tip_amount  # Add tip amount to the total bill
+
+    elif tip_type == "%":
+        # Input tip as a percentage of the total with tax
+        tip_percent = float(input("Enter the tip percentage: "))
+        tip_amount = (total_with_tax * tip_percent) / 100
+        total_bill += tip_amount  # Add tip amount to the total bill
+
+    else:
+        # Handle invalid input for tip type
+        print("Invalid input for tip type. Proceeding without a tip.")
+
+# Step 6: Display the final amount using formatted strings
+print(f"Original Bill: ${bill_amount:.2f}")
+print(f"Tax Amount (@{tax_rate}%): ${tax_amount:.2f}")
+if tip_response == "yes" and tip_type in ("$", "%"):
+    print(f"Tip Amount: ${tip_amount:.2f}")
+print(f"Total Payable Bill: ${total_bill:.2f}")    # [:.2f] show the 2 decimal after the point(.) or how much number we type this show only in that limit the decimal
+
+
+###PROECT(2): I am not capable of doing for this project
+
+#without boolen conditon(is_valid)
+
+# Password Validator without 'is_valid' flag
+print("Welcome to the Password Validator")
+
+password = input("Please enter your password: ").strip()
+reasons = []  # Only use 'reasons' list to track invalid conditions
+
+# Check 1: Length of at least 8 characters
+if len(password) < 8:
+    reasons.append("Password must be at least 8 characters long.")
+
+# Check 2: Contains at least one uppercase letter
+if not any(char.isupper() for char in password):
+    reasons.append("Password must contain at least one uppercase letter.")
+
+# Check 3: Contains at least one lowercase letter
+if not any(char.islower() for char in password):
+    reasons.append("Password must contain at least one lowercase letter.")
+
+# Check 4: Contains at least one digit
+if not any(char.isdigit() for char in password):
+    reasons.append("Password must contain at least one number.")
+
+# Check 5: Does not contain spaces
+if " " in password:
+    reasons.append("Password must not contain any spaces.")
+
+# Determine validity based on 'reasons' list
+if not reasons:
+    print("Your password is valid!")
+else:
+    print("Your password is invalid for the following reasons:")
+    for reason in reasons:
+        print(f"- {reason}")
+
+
+
+
+# with the boole conditon(is_valid)
+
+# Password Validator
+print("Welcome to the Password Validator")
+
+# Step 1: Take user input for password
+password = input("Please enter your password: ").strip()
+
+# Step 2: Initialize validity checks
+is_valid = True
+reasons = []
+
+# Step 3: Check if the password meets all the criteria
+
+# Check 1: Length of at least 8 characters
+if len(password) < 8:
+    is_valid = False
+    reasons.append("Password must be at least 8 characters long.")
+
+# Check 2: Contains at least one uppercase letter
+if not any(char.isupper() for char in password):
+    is_valid = False
+    reasons.append("Password must contain at least one uppercase letter.")
+
+# Check 3: Contains at least one lowercase letter
+if not any(char.islower() for char in password):
+    is_valid = False
+    reasons.append("Password must contain at least one lowercase letter.")
+
+# Check 4: Contains at least one digit
+if not any(char.isdigit() for char in password):
+    is_valid = False
+    reasons.append("Password must contain at least one number.")
+
+# Check 5: Does not contain spaces
+if " " in password:
+    is_valid = False
+    reasons.append("Password must not contain any spaces.")
+
+# Step 4: Display the result
+if is_valid:
+    print("Your password is valid!")
+else:
+    print("Your password is invalid for the following reasons:")
+    for reason in reasons:
+        print(f"- {reason}")
+
+
+
+PROJECT(3)
+
+print("WELCOME TO THE BILLING SYSTEM")
+user_response = input("If you are a new user or old (type 'new' or 'old'): ").strip().lower()
+
+# Keep prompting until valid input
+while user_response not in ("new", "old"):
+    print("Enter as 'new' or 'old'!")
+    user_response = input("If you are a new user or old (type 'new' or 'old'): ").strip().lower()
+
+# Password setup and validation for new users
+if user_response == "new":
+    user_email = input("Enter your email: ").strip()
+    print("Password Requirements:")
+    print("- At least 8 characters long")
+    print("- Contains at least one uppercase letter")
+    print("- Contains at least one lowercase letter")
+    print("- Contains at least one number")
+    print("- No spaces allowed")
+
+    while True:
+        password = input("Enter a password: ").strip()
+        reasons = []  # Reset reasons each attempt
+
+        # Password validation checks
+        if len(password) < 8:
+            reasons.append("Must be at least 8 characters.")
+        if not any(char.islower() for char in password):
+            reasons.append("Must contain at least one lowercase letter.")
+        if not any(char.isupper() for char in password):
+            reasons.append("Must contain at least one uppercase letter.")
+        if not any(char.isdigit() for char in password):
+            reasons.append("Must contain at least one number.")
+        if " " in password:
+            reasons.append("Password should not contain spaces.")
+
+        # Provide feedback if the password is invalid
+        if not reasons:
+            print("Password is valid! You have successfully set up your account.")
+            break  # Password meets all criteria; exit loop
+        else:
+            print("Password is invalid for the following reasons:")
+            for reason in reasons:
+                print(f"- {reason}")
+            print("Please try again.")
+
+elif user_response == "old":
+    print("Welcome back! You are now logged in.")
+
+# Bill Calculation Section
+print("\nWelcome to the Bill Calculator")
+
+# Collect user input for bill amount and tax rate, with error handling
+while True:
+    try:
+        bill_amount = float(input("Enter the bill amount: $"))
+        tax_rate = float(input("Enter the tax rate (%): "))
+        break
+    except ValueError:
+        print("Please enter valid numbers for the bill and tax rate.")
+
+# Calculate tax amount and initial total
+tax_amount = (bill_amount * tax_rate) / 100
+total_with_tax = bill_amount + tax_amount
+
+# Ask if user wants to add a tip
+tip_response = input("Would you like to add a tip? (yes/no): ").strip().lower()
+total_bill = total_with_tax  # Default total amount
+
+# Tip processing if user wants to add a tip
+if tip_response == "yes":
+    tip_type = input("Enter tip type: amount ($) or percentage (%): ").strip()
+
+    # Process based on tip type
+    if tip_type == "$":
+        while True:
+            try:
+                tip_amount = float(input("Enter the tip amount in dollars: $"))
+                total_bill += tip_amount
+                break
+            except ValueError:
+                print("Please enter a valid number for the tip amount.")
+
+    elif tip_type == "%":
+        while True:
+            try:
+                tip_percent = float(input("Enter the tip percentage: "))
+                tip_amount = (total_with_tax * tip_percent) / 100
+                total_bill += tip_amount
+                break
+            except ValueError:
+                print("Please enter a valid number for the tip percentage.")
+    else:
+        print("Invalid input for tip type. Proceeding without a tip.")
+
+# Display final bill summary
+print(f"\n--- Bill Summary ---")
+print(f"Original Bill: ${bill_amount:.2f}")
+print(f"Tax Amount (@{tax_rate}%): ${tax_amount:.2f}")
+if tip_response == "yes" and tip_type in ("$", "%"):
+    print(f"Tip Amount: ${tip_amount:.2f}")
+print(f"Total Payable Bill: ${total_bill:.2f}")
+
+
+
+
+PROJECT(4) Shopping cart program!
+
+# Welcome Message
+print("Welcome to the Shopping Cart Program!")
+print("Start adding items to your cart or type 'done' to finalize your purchases.\n")
+
+# Initialize an empty cart (dictionary to store items and their details)
+cart = {}
+
+while True:
+    # Ask for product name
+    product_name = input("Product Name: ").strip().lower()
+
+    # Finalize the cart when 'done' is entered
+    if product_name == "done":
+        break
+
+    # Validate product name (must not be empty)
+    if not product_name:
+        print("Product name cannot be empty. Please try again.")
+        continue
+
+    # Check if price is valid
+    try:
+        price = float(input("Price ($): ").strip())
+        if price <= 0:
+            print("Invalid price. Price must be a positive number.")
+            continue
+    except ValueError:
+        print("Invalid input. Please enter a valid numeric value for price.")
+        continue
+
+    # Check if quantity is valid
+    try:
+        quantity = int(input("Quantity: ").strip())
+        if quantity <= 0:
+            print("Invalid quantity. Quantity must be a positive number.")
+            continue
+    except ValueError:
+        print("Invalid input. Please enter a valid numeric value for quantity.")
+        continue
+
+    # Add or update the item in the cart
+    if product_name in cart:
+        cart[product_name]["quantity"] += quantity
+        print(f"Product '{product_name}' already exists in the cart. Quantity updated to {cart[product_name]['quantity']}.\n")
+    else:
+        cart[product_name] = {"price": price, "quantity": quantity}
+        print(f"Product '{product_name}' added to the cart.\n")
+
+# Cart Summary
+if cart:
+    print("\nSummary of items in your cart:")
+    print("---------------------------------")
+    total_cost = 0
+    for idx, (item, details) in enumerate(cart.items(), start=1):
+        item_total = details["price"] * details["quantity"]
+        total_cost += item_total
+        print(f"{idx}. {item.capitalize()} - ${details['price']:.2f} x {details['quantity']} = ${item_total:.2f}")
+
+    print("---------------------------------")
+    print(f"Total Cost: ${total_cost:.2f}")
+else:
+    print("\nYour cart is empty.")
+
+# Goodbye Message
+print("\nThank you for using the Shopping Cart Program! See you again soon!")
+
+
+
+
+

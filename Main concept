@@ -1,0 +1,2 @@
+1-[range] - numbers are not count as integer( in star showing project)
+2-[for] - for loop iterate  itself as element count, if there are 5 number then for loop iterate 5 times
